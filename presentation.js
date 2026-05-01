@@ -32,8 +32,6 @@ class Presentation extends Phaser.Scene {
     });
     retour.setOrigin(0,0);
 
-    console.log(retour.width)
-
     retour.setInteractive({useHandCursor: true});
     retour.on('pointerdown', () => {this.scene.start('titre_scene')});
 

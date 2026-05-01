@@ -11,7 +11,6 @@ class Jeux extends Phaser.Scene {
     preload(){
     console.log('Jeux');
     this.load.image('cave', 'assets/cave.avif');
-    this.load.image('beige', 'assets/beige.avif');
     this.load.spritesheet('souris', 'assets/souris.png', {frameWidth:55.5, frameHeight:41.6});
     this.load.image('plateforme', 'assets/plateforme.jpg');
     }
