@@ -17,7 +17,7 @@ class Presentation extends Phaser.Scene {
 
     let fond = this.add.image(0, 0, 'blanc');
     fond.setOrigin(0,0);
-    fond.setScale(2)
+    fond.setScale(2);
 
     this.add.image(-863.5,-450, 'bois');
 
@@ -25,7 +25,7 @@ class Presentation extends Phaser.Scene {
     photo.setOrigin(0,0);
     photo.setScale(0.2);
 
-    let retour = this.add.text(10, 10, 'Retour à la page titre', { 
+    let retour = this.add.text(10, 10, 'Retour à l\'écran titre', { 
         font: "15px Arial", 
         fill: "#1b1717",
         lineSpacing: 7,
