@@ -22,7 +22,7 @@ class Victoire extends Phaser.Scene {
 
     let texte = this.add.text(109.5, 250, 'Vous avez gagné', { 
         font: "60px Arial", 
-        fill: "#16a85a"
+        fill: "#58cd2a"
     });
     texte.setOrigin(0,0);
 

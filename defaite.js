@@ -21,7 +21,7 @@ class Defaite extends Phaser.Scene {
 
     let texte = this.add.text(116.5, 250, 'Vous avez perdu', { 
         font: "60px Arial", 
-        fill: "#b72121"
+        fill: "#da1d1d"
     });
     texte.setOrigin(0,0);
 

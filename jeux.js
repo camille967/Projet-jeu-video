@@ -63,7 +63,8 @@ class Jeux extends Phaser.Scene {
     cave.setOrigin(0,0);
     cave.setScale(0.2);
 
-    souris = this.physics.add.sprite(65, 630, 'souris');
+    souris = this.physics.add.sprite(65, 610, 'souris');
+    souris.setScale(1.20)
     souris.setBounce(0.2);
     souris.setCollideWorldBounds(true);
 
@@ -75,6 +76,7 @@ class Jeux extends Phaser.Scene {
     plateformes.create(1664.5, 200, 'plateforme').refreshBody()
     plateformes.create(0,-450, 'plateforme').refreshBody()
 
+    //plateformes
     plateformes.create(220, 575, 'plateforme').setScale(0.01).refreshBody()
     plateformes.create(240, 575, 'plateforme').setScale(0.01).refreshBody()
     plateformes.create(260, 575, 'plateforme').setScale(0.01).refreshBody()
@@ -137,16 +139,16 @@ class Jeux extends Phaser.Scene {
     plateformes.create(250, 265, 'plateforme').setScale(0.01).refreshBody()
 
     let fromages = this.physics.add.group();
-    fromages.create(420, 525, 'fromage').setScale(0.1)
-    fromages.create(350, 315, 'fromage').setScale(0.1)
-    fromages.create(550, 470, 'fromage').setScale(0.1)
-    fromages.create(220, 255, 'fromage').setScale(0.1)
-    fromages.create(355, 150, 'fromage').setScale(0.1)
+    fromages.create(420, 520, 'fromage').setScale(0.15)
+    fromages.create(350, 310, 'fromage').setScale(0.15)
+    fromages.create(550, 465, 'fromage').setScale(0.15)
+    fromages.create(220, 250, 'fromage').setScale(0.15)
+    fromages.create(355, 145, 'fromage').setScale(0.15)
     compteur = 5
 
     let trappes = this.physics.add.group();
-    trappes.create(350, 525, 'trappe').setScale(0.08)
-    trappes.create(280, 315, 'trappe').setScale(0.08)
+    trappes.create(350, 520, 'trappe').setScale(0.1)
+    trappes.create(280, 310, 'trappe').setScale(0.1)
 
 
     this.physics.add.overlap(fromages, souris, mangeFromage, null, this) 
@@ -209,6 +211,7 @@ class Jeux extends Phaser.Scene {
     if (Phaser.Input.Keyboard.JustDown(is8)) {reponse = reponse + '8'}
     if (Phaser.Input.Keyboard.JustDown(is9)) {reponse = reponse + '9'}
     if (Phaser.Input.Keyboard.JustDown(is0)) {reponse = reponse + '0'}
+    
     function changerQuestion(equation, nb1, nb2) 
         {
         equation.setText(nb1 + ' + ' + nb2)
@@ -240,16 +243,19 @@ class Jeux extends Phaser.Scene {
     if (cursors.left.isDown)
         {
         souris.setVelocityX(-300);
-        souris.anims.play('souris_court', false)
+        souris.setFlipX(true)
+        souris.anims.play('souris_court', true)
+        if (!souris.body.blocked.down)
+            {souris.anims.play('souris_court', false)}
         }
 
     else if (cursors.right.isDown)
         {
         souris.setVelocityX(300);
+        souris.setFlipX(false)
         souris.anims.play('souris_court', true);
         if (!souris.body.blocked.down)
-            {souris.anims.play('souris_court', false)
-        }
+            {souris.anims.play('souris_court', false)}
         }
 
     else

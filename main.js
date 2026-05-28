@@ -20,7 +20,7 @@ var config = {
         default: 'arcade',
         arcade: {
             gravity: { y: 500 },
-            debug: true
+            debug: false
         }
     },
 };
@@ -34,4 +34,4 @@ game.scene.add('presentation_scene', presentation_scene)
 game.scene.add('defaite_scene', defaite_scene)
 game.scene.add('victoire_scene', victoire_scene)
 
-game.scene.start('jeux_scene');
+game.scene.start('demarrage_scene');
